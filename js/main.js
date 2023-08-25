@@ -1,4 +1,3 @@
-// script.js
 const carouselContainer = document.querySelector(".carousel-container");
 const images = [
   {
@@ -8,18 +7,18 @@ const images = [
   },
   {
     url: "./img/02.webp",
-    title: "Titolo 1",
+    title: "Titolo 2",
   },
   {
     url: "./img/03.webp",
-    title: "Titolo 1",
+    title: "Titolo 3",
   },
   {
     url: "./img/04.webp",
-    title: "Titolo 1",
+    title: "Titolo 4",
   },
   {
     url: "./img/05.webp",
-    title: "Titolo 1",
+    title: "Titolo 5",
   },
 ];
