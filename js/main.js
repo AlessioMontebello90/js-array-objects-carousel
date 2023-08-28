@@ -49,3 +49,6 @@ slides.forEach((slide, index) => {
   slideElement.innerHTML = 
     
 });
+
+nextButton.addEventListener('click', goNext);
+prevButton.addEventListener('click', goPrev);
