@@ -13,7 +13,7 @@ img {
   object-fit: cover;
 }
 
-#back {
+#prev {
   position: absolute;
   top: 70%;
   left: 70%;
