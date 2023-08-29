@@ -53,9 +53,7 @@ function printImg() {
     image.html = slide;
     image.index = index;
     if (image.index == slideActive) slide.classList.add("active");
-
     containerImg.append(slide);
-    // console.log(image, slide);
   });
 }
 
@@ -71,7 +69,7 @@ function printthumb() {
   images.forEach((image, index) => {
     const slide = document.createElement("div");
 
-    slide.innerHTML = ` 
+    slide.innerHTML = `
     <img src="${image.image}" alt="" />`;
 
     slide.style.height = `calc(100% /${images.length})`;
@@ -79,17 +77,8 @@ function printthumb() {
     image.thumb = slide;
 
     containerThumb.append(slide);
-    // console.log(image, slide);
   });
 }
-
-next.addEventListener("click", function () {
-  nextButton(slideActive++);
-});
-
-back.addEventListener("click", function () {
-  prevButton(slideActive--);
-});
 
 // FUNZIONE PER L'ACTIVE SULLE SLIDE IN SCORRIMENTO
 

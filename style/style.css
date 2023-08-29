@@ -3,8 +3,15 @@ body {
 }
 
 #container-img {
-  width: 1050px;
+  width: 80%;
   padding: 0;
+}
+
+.carousel {
+  display: flex;
+  position: relative;
+  width: 1200px;
+  height: 800px;
 }
 
 img {
@@ -46,6 +53,7 @@ img {
 }
 
 #thumb-box {
+  width: 20%;
   overflow: hidden;
   border: 1px solid grey;
   border-radius: 0px 20px 20px 0px;
