@@ -6,19 +6,21 @@ body {
   width: 80%;
   height: 100%;
   padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px 0px 0px 15px;
 }
 
 .carousel {
   display: flex;
-  position: relative;
+
   width: 1200px;
   height: 800px;
 }
 
 img {
-  height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 #prev {
@@ -34,7 +36,7 @@ img {
 
 .active {
   border-radius: 15px 0px 0px 15px;
-  overflow: hidden;
+
   display: flex !important;
   align-items: center;
   position: absolute;
