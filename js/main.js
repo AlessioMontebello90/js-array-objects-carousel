@@ -1,3 +1,5 @@
+// DICHIARO GLI OGGETTI DELL ARRAY
+
 const images = [
   {
     image: "img/01.webp",
@@ -28,12 +30,14 @@ const images = [
 let slideActive = 0;
 
 const next = document.getElementById("next");
-const back = document.getElementById("prev");
+const prev = document.getElementById("prev");
 const containerImg = document.getElementById("container-slider");
 const containerThumb = document.getElementById("thumb-box");
 
 printImg();
 printthumb();
+
+// DICHIARO GLI ELEMENTI PER LA MODIFICA DEL DOM
 
 function printImg() {
   images.forEach((image, index) => {
@@ -51,7 +55,31 @@ function printImg() {
     if (image.index == slideActive) slide.classList.add("active");
 
     containerImg.append(slide);
-    console.log(image, slide);
+    // console.log(image, slide);
+  });
+}
+
+next.addEventListener("click", function () {
+  nextButton(slideActive++);
+});
+
+prev.addEventListener("click", function () {
+  prevButton(slideActive--);
+});
+
+function printthumb() {
+  images.forEach((image, index) => {
+    const slide = document.createElement("div");
+
+    slide.innerHTML = ` 
+    <img src="${image.image}" alt="" />`;
+
+    slide.style.height = `calc(100% /${images.length})`;
+
+    image.thumb = slide;
+
+    containerThumb.append(slide);
+    // console.log(image, slide);
   });
 }
 
@@ -60,5 +88,26 @@ next.addEventListener("click", function () {
 });
 
 back.addEventListener("click", function () {
-  revButton(slideActive--);
+  prevButton(slideActive--);
 });
+
+// FUNZIONE PER L'ACTIVE SULLE SLIDE IN SCORRIMENTO
+
+function nextButton(avantiDietro) {
+  images[slideActive - 1].html.classList.remove("active");
+
+  avantiDietro;
+
+  if (slideActive >= images.length) slideActive = 0;
+
+  images[slideActive].html.classList.add("active");
+}
+function prevButton(avantiDietro) {
+  images[slideActive + 1].html.classList.remove("active");
+
+  avantiDietro;
+
+  if (slideActive < 0) slideActive = images.length - 1;
+
+  images[slideActive].html.classList.add("active");
+}
