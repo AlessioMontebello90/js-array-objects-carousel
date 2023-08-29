@@ -1,54 +1,64 @@
-const carouselImg = document.querySelector("slider");
 const images = [
   {
-    images: "./img/01.webp",
+    image: "img/01.webp",
     title: "Marvel's Spiderman Miles Morale",
-    description:
-      "Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man",
+    text: "Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.",
   },
   {
-    images: "./img/02.webp",
+    image: "img/02.webp",
     title: "Ratchet & Clank: Rift Apart",
-    description:
-      "Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.",
+    text: "Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.",
   },
   {
-    images: "./img/03.webp",
+    image: "img/03.webp",
     title: "Fortnite",
-    description:
-      "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+    text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
   },
   {
-    images: "./img/04.webp",
+    image: "img/04.webp",
     title: "Stray",
-    description:
-      "Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city",
+    text: "Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city",
   },
   {
-    images: "./img/05.webp",
+    image: "img/05.webp",
     title: "Marvel's Avengers",
-    description:
-      "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
+    text: "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
   },
 ];
+let slideActive = 0;
 
-const slidesContainerElement = document.getElementById("slider");
+const next = document.getElementById("next");
+const back = document.getElementById("prev");
+const containerImg = document.getElementById("container-slider");
+const containerThumb = document.getElementById("thumb-box");
 
-let activeSlide = 0;
+printImg();
+printthumb();
 
+function printImg() {
+  images.forEach((image, index) => {
+    const slide = document.createElement("div");
+    slide.classList.add("d-none");
+    slide.innerHTML = ` 
+    <img src="${image.image}" alt="" />
+    <div class="text">
+    <h1>${image.title}</h1>
+    <p>${image.text}</p>
+    </div>`;
 
-slides.forEach((slide, index) => {
-  
-  const slideElement = document.createElement('div');
-  slideElement.classList.add('slide');
+    image.html = slide;
+    image.index = index;
+    if (image.index == slideActive) slide.classList.add("active");
 
-  
-  if (index == activeSlide) slideElement.classList.add('active');
+    containerImg.append(slide);
+    console.log(image, slide);
+  });
+}
 
-  
-  slideElement.innerHTML = 
-    
+next.addEventListener("click", function () {
+  nextButton(slideActive++);
 });
 
-nextButton.addEventListener('click', goNext);
-prevButton.addEventListener('click', goPrev);
+back.addEventListener("click", function () {
+  revButton(slideActive--);
+});
