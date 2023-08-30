@@ -82,21 +82,21 @@ function printthumb() {
 
 // FUNZIONE PER L'ACTIVE SULLE SLIDE IN SCORRIMENTO
 
-function nextButton(avantiDietro) {
-  images[slideActive - 1].html.classList.remove("active");
+// function nextButton(avantiDietro) {
+//   images[slideActive - 1].html.classList.remove("active");
 
-  avantiDietro;
+//   avantiDietro;
 
-  if (slideActive >= images.length) slideActive = 0;
+//   if (slideActive >= images.length) slideActive = 0;
 
-  images[slideActive].html.classList.add("active");
-}
-function prevButton(avantiDietro) {
-  images[slideActive + 1].html.classList.remove("active");
+//   images[slideActive].html.classList.add("active");
+// }
+// function prevButton(avantiDietro) {
+//   images[slideActive + 1].html.classList.remove("active");
 
-  avantiDietro;
+//   avantiDietro;
 
-  if (slideActive < 0) slideActive = images.length - 1;
+//   if (slideActive < 0) slideActive = images.length - 1;
 
-  images[slideActive].html.classList.add("active");
+//   images[slideActive].html.classList.add("active");
 }
